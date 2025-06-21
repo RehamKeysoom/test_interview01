@@ -15,6 +15,7 @@ return new class extends Migration
     $table->id();
     $table->string('name');
     $table->foreignId('parent_id')->nullable()->constrained('categories')->onDelete('cascade');
+    $table->unsignedTinyInteger('depth')->default(0); 
     $table->timestamps();
 });
 
