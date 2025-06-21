@@ -26,14 +26,6 @@ class Category extends Model
         return $this->hasMany(Product::class);
     }
 
-    public function canHaveProducts(): bool
-    {
-        return $this->children()->count() === 0;
-    }
-
-    public function canHaveChildren(): bool
-    {
-        return $this->products()->count() === 0 && $this->children()->count() < 4;
-    }
+    
 }
 
